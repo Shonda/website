@@ -1,41 +1,43 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import { css } from 'emotion'
+import Navlink from './Navlink'
 
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+// export const pageQuery = graphql`
+//   query IndexQuery {
+//     allMarkdownRemark(
+//       sort: { order: DESC, fields: [frontmatter___date] },
+//       filter: { frontmatter: { templateKey: { eq: "page" } }}
+//     ) {
+//       edges {
+//         node {
+//           id
+//           fields {
+//             slug
+//           }
+//           frontmatter {
+//             title
+//             templateKey
+//             date(formatString: "MMMM DD, YYYY")
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
 
 const Navbar = () => (
-  <nav className="navbar is-transparent">
-    <div className="container">
-      <div className="navbar-brand">
-        <Link to="/" className="navbar-item">
-          <figure className="image">
-            <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
-          </figure>
-        </Link>
-      </div>
-      <div className="navbar-start">
-        <Link className="navbar-item" to="/about">
-          About
-        </Link>
-        <Link className="navbar-item" to="/products">
-          Products
-        </Link>
-      </div>
-      <div className="navbar-end">
-        <a
-          className="navbar-item"
-          href="https://github.com/AustinGreen/gatsby-netlify-cms-boilerplate"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className="icon">
-            <img src={github} alt="Github" />
-          </span>
-        </a>
-      </div>
-    </div>
-  </nav>
+  <div className={css`
+      width: 100%;
+      flex: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      `}>
+      <Navlink to="/pages/about/">About Shonda</Navlink>
+      <Navlink to="/pages/news/">News &amp; Updates</Navlink>
+      <Navlink to="/pages/support/">Support</Navlink>
+      <Navlink to="/pages/contact/">Contact Us</Navlink>
+  </div>
 )
 
 export default Navbar
