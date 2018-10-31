@@ -1,6 +1,6 @@
 ---
 templateKey: about-page
-title: Homepage
+title: About
 ---
 ## Who  we  are
 
